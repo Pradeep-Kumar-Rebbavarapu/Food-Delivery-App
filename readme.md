@@ -64,3 +64,13 @@ You can find the description of api calls on [Description](https://food-delivery
 ## The django admin panel
 
 A New Verison of the Admin Panel on [Description](https://food-delivery-app-2aew.onrender.com/admin/).
+
+## Credential For The Admin Panel
+
+Access the development / local admin panel with the following credentials:
+- **Username**: admin
+- **Password**: admin
+
+Access the deployed / production admin panel [here](https://food-delivery-app-2aew.onrender.com/admin/) with the following credentials:
+- **Username**: user123
+- **Password**: Gangsta@user123
