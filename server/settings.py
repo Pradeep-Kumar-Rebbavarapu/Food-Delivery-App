@@ -21,8 +21,9 @@ env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables from a file
-env_file = BASE_DIR / ".env"
-environ.Env.read_env(env_file)
+env_path = BASE_DIR / '.env'  # Change it to .env.prod for production environment
+
+environ.Env.read_env(env_path)
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,11 +32,7 @@ environ.Env.read_env(env_file)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (
-    False
-)
-
+DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = ["food-delivery-app-2aew.onrender.com", "localhost", "127.0.0.1","0.0.0.0"]  # Add your domain here
 

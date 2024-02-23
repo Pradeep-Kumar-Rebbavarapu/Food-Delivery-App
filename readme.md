@@ -4,6 +4,8 @@ This is a Django-based food delivery web application.
 
 ## Running the App Locally
 
+
+
 ### Using Docker
 
 1. Pull the Docker image:
@@ -48,6 +50,26 @@ This is a Django-based food delivery web application.
     ```bash
     python manage.py runserver
     ```
+## Using `.env` File
+
+### Development
+
+In your local development environment, you can use a `.env` file to manage environment variables. Create a `.env` file in the base directory of your project and add your environment variables there. Here's an example `.env` file for development:
+
+```dotenv
+DEBUG=True
+SECRET_KEY=your_secret_key
+```
+
+### Production
+
+In your production environment, you can use a `.env` file to manage environment variables. Create a `.env` file in the base directory of your project and add your environment variables there. Here's an example `.env` file for development:
+
+```dotenv
+DEBUG=False
+SECRET_KEY=your_secret_key
+DATABASE_URL=your_database_url
+```
 
 ## Deployment Process
 
@@ -76,3 +98,6 @@ Access the development / local admin panel with the following credentials:
 Access the deployed / production admin panel [here](https://food-delivery-app-2aew.onrender.com/admin/) with the following credentials:
 - **Username**: user123
 - **Password**: Gangsta@user123
+
+
+

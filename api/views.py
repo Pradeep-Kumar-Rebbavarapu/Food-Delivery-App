@@ -4,7 +4,8 @@ from rest_framework.views import APIView
 from .models import Organization, Item, Pricing
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .serializers import OrganizationSerializer, ItemSerializer, PricingSerializer
-
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 
 class OrganizationListCreateAPIView(ListCreateAPIView):
     queryset = Organization.objects.all()
@@ -37,6 +38,19 @@ class PricingDetailAPIView(RetrieveUpdateDestroyAPIView):
 
 
 class CalculatePrice(APIView):
+    @swagger_auto_schema(
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=["zone", "organization_id", "total_distance", "item_type"],
+            properties={
+                "zone": openapi.Schema(type=openapi.TYPE_STRING),
+                "organization_id": openapi.Schema(type=openapi.TYPE_INTEGER),
+                "total_distance": openapi.Schema(type=openapi.TYPE_NUMBER),
+                "item_type": openapi.Schema(type=openapi.TYPE_STRING),
+            },
+        ),
+        responses={200: openapi.Response(description="Price calculated successfully")},
+    )
     def post(self, request):
         data = request.data
         zone = data.get("zone")
