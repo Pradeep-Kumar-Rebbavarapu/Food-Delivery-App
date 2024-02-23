@@ -35,7 +35,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = (
     True
     if env("mode") == "Development"
-    else False if env("DEBUG") == "Production" else True
+    else False if env("mode") == "Production" else True
 )
 
 
