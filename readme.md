@@ -45,7 +45,14 @@ This is a Django-based food delivery web application.
     ```bash
     pip install -r requirements.txt
     ```
-
+4. Migrations
+    ```bash
+    python manage.py makemigrations
+    ```
+5. Migrate
+    ```bash
+    python manage.py migrate
+    ```
 4. Run the Django development server:
     ```bash
     python manage.py runserver
