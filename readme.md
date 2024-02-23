@@ -7,11 +7,13 @@ This is a Django-based food delivery web application.
 ### Using Docker
 
 1. Pull the Docker image:
+    ### Productio Mode locally
     ```bash
     docker pull pradeepkumar11519/food-delivery-app:latest
     ```
 
 2. Run the Docker container:
+    ### Development Mode locally
     ```bash
     docker run -p 8000:8000 pradeepkumar11519/food-delivery-app:latest
     ```
